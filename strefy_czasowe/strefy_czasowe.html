@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <link rel="stylesheet" href="ext_CSS.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <title>Trzy strefy czasowe</title>
+	
+  </head>
+  <body>
+  <nav>
+   <!-- Nawigacja na stronie -->
+  </nav>
+  
+  <header>
+   <!-- Nagłówek strony -->
+    <p style="text-align: center; color: #D3D3D3;"> Witamy na nowoczesnej stronie internetowej stworzonej w technologii HTML5 i CSS3
+	</p>
+  </header>
+  
+   <main class="container-fluid">
+  
+    <h1 id="glowny_naglowek">Aplikacja  – Trzy strefy czasowe</h1>
+	<h3 id="podtytul">Dowiedzieć się o czasie w różnych strefach czasowych</h3>
+	
+	
+		  <section class="strefa_czasowa">
+				<h5 class="card-title">Data i czas w Nowym Jorku</h5>
+				<p class="card-text" id="sdicNJ">Wyświetl tutaj datę i czas w Nowym Jorku, sekundy mają się zmieniać co sekundę. </p>
+		  </section>
+		  
+			<section class="strefa_czasowa">
+				<h5 class="card-title">Data i czas w Warszawie</h5>
+				<p class="card-text" id="sdicW">Wyświetl tutaj datę i czas w Warszawie, sekundy mają się zmieniać co sekundę.</p>
+		  </section>
+		  
+		  
+			<section class="strefa_czasowa">
+				<h5 class="card-title">Data i czas w Moskwie</h5>
+				<p class="card-text" id="sdicM">Wyświetl tutaj datę i czas w Moskwie, sekundy mają się zmieniać co sekundę.</p>
+
+		  </section>
+		  
+
+	
+   </main> <!-- Koniec main class="container-fluid" --> 
+   
+   <footer>
+   <!-- Stopka strony -->
+   <p style="text-align: center; color: #D3D3D3;">
+    &copy; Wrocław 2020
+   </p>
+  </footer>
+
+    
+	
+	 <script>
+	  /* Skrypt JavaScript (ECMA Script)  wyświetlający datę i czas
+	   w Nowym Jorku, Warszawie i Moskwie */
+	   var generuj_dic = function(){
+	   var dic = new Date();
+	   var opcjeW = 
+	   {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false};
+	   var sdicW=document.querySelector("#sdicW");
+	   sdicW.textContent=dic.toLocaleString('pl-PL', opcjeW);
+	   sdicW.textContent+=', '+dic.toLocaleString('pl-PL', {weekday: 'long'});
+	   
+	   /* Wyrażam czas w ms od 1.01.1970 r. */
+	   var dic_local_ms=dic.getTime();
+	   console.log("dic: "+dic);
+	   console.log("dic_local_ms: "+dic_local_ms);
+	   
+	   var nowy_dic=new Date(dic_local_ms);
+	   console.log("nowy_dic: "+nowy_dic.toLocaleString());
+	   
+	   //local_offset dla Polski to -120 (minut), tzn. Polska jest  UTC+2h
+	   var local_offset=dic.getTimezoneOffset();
+	   console.log("local_offset: "+local_offset);
+	   
+	   /* czas w ms w Moskwie
+	   Moskwa=Warszawa+1h=Warszawa + 3 600 000 ms
+	   */
+	   var dic_M_ms=dic_local_ms+3600000;
+	   var dic_M=new Date(dic_M_ms);
+	   
+	   /* czas w ms w NJ
+	   NJ=Warszawa-6h=Warszawa -6* 3 600 000 ms
+	   */
+	   var dic_NJ_ms=dic_local_ms-6*3600000;
+	   var dic_NJ=new Date(dic_NJ_ms);
+	   
+	   
+	   var sdicNJ=document.querySelector("#sdicNJ");
+	   sdicNJ.textContent=dic_NJ.toLocaleString('en-US');
+	   sdicNJ.textContent+=', '+dic_NJ.toLocaleString('en-US', {weekday: 'long'});
+	   
+	   var sdicM=document.querySelector("#sdicM");
+	   sdicM.textContent=dic_M.toLocaleString('ru-RU', opcjeW);
+	   sdicM.textContent+=', '+dic_M.toLocaleString('ru-RU', {weekday: 'long'});
+	   };
+	   
+	   setInterval(generuj_dic,1000);
+	   //generuj_dic();
+	 
+	 </script>
+	
+  </body>
+</html>
