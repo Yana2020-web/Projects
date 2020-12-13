@@ -1,0 +1,109 @@
+.navbar{background-color: #1e384c;}
+.nav-link{color: #f4f4f4; cursor:pointer;}
+.nav-link:hover{color: #fdc98c;}
+
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/pic4.jpg") no-repeat center center;
+  background-size: cover;
+  margin-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.carousel { margin-top: 7rem; padding-bottom:2rem}
+
+.accordion {
+  background-color:rgb(199, 165, 137, 0.3);
+}
+
+.accordion-body{ background-color: #f8f9fa; }
+
+.products {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.col-lg-4{
+  margin-top: 7rem; 
+}
+
+.call-to-action {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/pic4.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.call-to-action .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+.section-form {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 28rem;
+}
+
+.button-form{
+  margin-left: -43rem;
+}
+
+.btn {
+  margin-left: 15rem;
+  background-color: #1e384c;
+  border-color: #1e384c;
+}
+
+.btn:hover{background-color: #427ba8; border-color: #427ba8;}
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
