@@ -73,12 +73,8 @@
 				   if ((ballX > playerX && ballX < playerX + paddelHeight) && (ballY + ballSize >= playerY)) {
 				   	ballSpeedX = -ballSpeedX;
 				   	ballSpeedY = -ballSpeedY;
-				   }
-				       
+				   }       
 			    }
-
-			    
-
 			    function table() {
 			      ctx.fillStyle = 'black';
 			      ctx.fillRect(0, 0, cw, ch);
@@ -87,11 +83,7 @@
 			        ctx.fillStyle = "gray"
 			        ctx.fillRect(cw / 2 - lineWidth / 2, linePosition, lineWidth, lineHeight)
 			      }
-
 			    }
-
-			  	
-
 			    topCanvas = canvas.offsetTop;
 			    console.log(topCanvas)
 
